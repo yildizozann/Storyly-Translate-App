@@ -1,10 +1,100 @@
-.box {
-  background-color: white;
-  
-  
+@import '/src/styles/media-quary';
+
+
+body{
+  margin: auto;
+  text-align: center;
 }
-.input-box{
-  width: 100%;
-  height: 100px;
-  resize: none;
+
+.header {
+  margin: 20px auto;
 }
+
+
+.container{
+
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(480px, 1fr) );
+  gap: 20px;
+  
+  .box{
+    margin:  0 auto;
+    height: 300px;
+    width: 400px;
+    resize: none;
+    border-radius: 8px;
+    font-size: 30px;
+    padding: 20px 40px;
+    max-width: 300px;
+
+     @include tablet{
+      max-width: 400px;
+    } 
+  
+  }
+
+  .box--left{
+    position: relative;
+    
+    .mic-info{
+      position:absolute;
+      bottom: 10px;
+      right: 300px;
+      left: 0px;
+      width: 50px;
+      margin: auto;
+    
+      @include tablet{
+        right: 400px;
+       
+      } 
+      
+    }
+
+    .btn1{
+      position:absolute;
+      bottom: 30px;
+      right: 300px;
+      left: 0px;
+      width: 50px;
+      background: transparent;
+      border-style: none;
+      margin: auto;
+      &:hover{
+        color: lightsalmon;
+      }
+
+      @include tablet{
+        right: 400px;
+        
+      } 
+
+
+    }
+    
+    .btn2{
+      
+      position:absolute;
+      top: 5px;
+      right: 0px;
+      left: 330px;
+      width: 20px;
+      border-radius: 10px;
+      background: transparent;
+      border-style: none;
+      margin: auto;
+      &:hover{
+        color: lightsalmon;
+      }
+
+      @include tablet{
+        left: 430px;
+      } 
+      
+    }
+
+  }
+}
+
+
+

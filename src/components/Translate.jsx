@@ -12,5 +12,5 @@ export default function Translate({ text }) {
             setConvertedText(response)
         })();
     }, [text]);
-    return (<textarea className='input-box box1' type="text" readOnly={true} placeholder='Translation' value={convertedText} />)
+    return (<textarea className='box' type="text" readOnly={true} placeholder='Translation' value={convertedText} />)
 }

@@ -3,6 +3,9 @@ import { mic } from '../utils/initMicrofon'
 
 function useMicrofon(isRecord = false) {
     const [transcript, setTranscript] = useState('');
+    const reset = () => {
+        setTranscript('')
+    }
 
     useEffect(() => {
 
@@ -40,7 +43,7 @@ function useMicrofon(isRecord = false) {
 
     }, [isRecord])
 
-    return [transcript]
+    return [transcript,reset]
 }
 
 export default useMicrofon;
