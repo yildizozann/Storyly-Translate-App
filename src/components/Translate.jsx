@@ -4,7 +4,6 @@ import TranslateAPI from '../api/translate';
 export default function Translate({ text }) {
     const [convertedText, setConvertedText] = useState('')
 
-    // TODO: useEffect içinde async method çağrılmaz. IIFE dönüştürülmesi gerekiyor. BAK!
     useEffect(() => {
         (async () => {
             let response;
@@ -12,5 +11,6 @@ export default function Translate({ text }) {
             setConvertedText(response)
         })();
     }, [text]);
+    
     return (<textarea className='box' type="text" readOnly={true} placeholder='Translation' value={convertedText} />)
 }

@@ -14,18 +14,18 @@ function App() {
   const [speech, setSpeech] = useState('')
   const [written, setWritten] = useState('')
   const [isWrite, setIsWrite] = useState(false)
-  
+
 
 
   const [transcript, reset] = useMicrofon(isRecord);
 
   useEffect(() => {
-    if (transcript) {
+    if (!!transcript) {
       setSpeech(transcript)
     }
   }, [transcript, isRecord])
 
-  //  ask permission for mic call only once when button click
+  
   useEffect(() => {
     if (isRecord) {
       askMicPermission();
@@ -40,16 +40,17 @@ function App() {
     setIsWrite(true)
     console.log(event.target.value)
   }
-
+  
   const handleClick = () => {
     setIsRecord(!isRecord)
     if (isRecord === false) {
       setWritten('')
-      setIsWrite(false) 
+      setIsWrite(false)
+      setSpeech('')
+      reset()
     } else {
       setWritten(speech)
     }
-    
   }
   const handleDeleteClick = () => {
     if (isWrite) {
@@ -57,11 +58,10 @@ function App() {
       setIsWrite(!isWrite)
     }
 
-    setSpeech('') 
-    reset() // transcript data cleaning.
-    
-  }
+    setSpeech('')
+    reset() 
 
+  }
 
 
   return (
@@ -83,9 +83,8 @@ function App() {
               <i className="mic fas fa-microphone-slash fa-2x"></i>}
           </button>
 
-          {/* TODO: Nasıl oluyor bu işlem ? */}   
-          { // condition for delete button
-          (isWrite||transcript) &&   
+          { 
+            (isWrite || !!transcript) &&
             <button className='btn2' onClick={handleDeleteClick}>
               <i className="fas fa-times fa-2x"></i>
             </button>
@@ -98,12 +97,13 @@ function App() {
             type="text"
             placeholder='Please Enter The Text...'
             onChange={handleWritten}
+            readOnly={isRecord && true}
           />
 
         </div>
 
         <Translate text={isWrite ? written : speech} />
-        
+
       </div>
     </>
 

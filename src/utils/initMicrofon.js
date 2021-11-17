@@ -1,5 +1,5 @@
 let mic;
-/* Singleton Pattern BAK! */
+
 export default function initMicrofon() {
 
     if (mic) return mic;
