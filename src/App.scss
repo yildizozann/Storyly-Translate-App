@@ -8,6 +8,7 @@ body{
 
 .header {
   margin: 20px auto;
+  
 }
 
 
@@ -60,8 +61,14 @@ body{
       background: transparent;
       border-style: none;
       margin: auto;
-      &:hover{
+      .fa-microphone{
         color: lightsalmon;
+      }
+      .fa-microphone-slash{
+
+      }
+      &:hover{
+        color: lightblue;
       }
 
       @include tablet{

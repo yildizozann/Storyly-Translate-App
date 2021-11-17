@@ -38,7 +38,6 @@ function App() {
   const handleWritten = event => {
     setWritten(event.target.value)
     setIsWrite(true)
-    console.log(event.target.value)
   }
   
   const handleClick = () => {
@@ -84,7 +83,7 @@ function App() {
           </button>
 
           { 
-            (isWrite || !!transcript) &&
+            ((isWrite || !!transcript) && !isRecord ) &&
             <button className='btn2' onClick={handleDeleteClick}>
               <i className="fas fa-times fa-2x"></i>
             </button>
