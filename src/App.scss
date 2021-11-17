@@ -4,6 +4,7 @@
 body{
   margin: auto;
   text-align: center;
+ 
 }
 
 .header {
@@ -15,22 +16,34 @@ body{
 .container{
 
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(480px, 1fr) );
+  grid-template-columns: repeat( auto-fit, minmax(280px, 1fr) );
   gap: 20px;
+
+  @include tablet{
+    grid-template-columns: repeat( auto-fit, minmax(480px, 1fr) );
+  }
   
   .box{
     margin:  0 auto;
-    height: 300px;
-    width: 400px;
+    height: 180px;
+    width: 200px;
     resize: none;
     border-radius: 8px;
     font-size: 30px;
     padding: 20px 40px;
-    max-width: 300px;
+    max-width: 250px;
+    
+    @include mobile{
+      height: 200px;
+    }
 
-     @include tablet{
+    @include tablet{
       max-width: 400px;
+      height: 300px;
+      width: 400px;
     } 
+
+  
   
   }
 
@@ -40,10 +53,10 @@ body{
     .mic-info{
       position:absolute;
       bottom: 10px;
-      right: 300px;
+      right: 210px;
       left: 0px;
       width: 50px;
-      margin: auto;
+      margin: 0 auto;
     
       @include tablet{
         right: 400px;
@@ -55,12 +68,12 @@ body{
     .btn1{
       position:absolute;
       bottom: 30px;
-      right: 300px;
+      right: 210px;
       left: 0px;
       width: 50px;
       background: transparent;
       border-style: none;
-      margin: auto;
+      margin: 0 auto;
       .fa-microphone{
         color: lightsalmon;
       }
@@ -82,14 +95,14 @@ body{
     .btn2{
       
       position:absolute;
-      top: 5px;
+      top: 10px;
       right: 0px;
-      left: 330px;
+      left: 220px;
       width: 20px;
       border-radius: 10px;
       background: transparent;
       border-style: none;
-      margin: auto;
+      margin:0 auto;
       &:hover{
         color: lightsalmon;
       }

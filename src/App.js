@@ -91,7 +91,6 @@ function App() {
 
           <textarea
             className='box'
-            id="text"
             value={isWrite ? written : speech}
             type="text"
             placeholder='Please Enter The Text...'
