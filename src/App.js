@@ -25,7 +25,7 @@ function App() {
     }
   }, [transcript, isRecord])
 
-  
+
   useEffect(() => {
     if (isRecord) {
       askMicPermission();
@@ -39,7 +39,7 @@ function App() {
     setWritten(event.target.value)
     setIsWrite(true)
   }
-  
+
   const handleClick = () => {
     setIsRecord(!isRecord)
     if (isRecord === false) {
@@ -58,7 +58,7 @@ function App() {
     }
 
     setSpeech('')
-    reset() 
+    reset()
 
   }
 
@@ -72,9 +72,7 @@ function App() {
 
         <div className='box--left'>
 
-          {isRecord ?
-            <span className='mic-info'>Listening</span> :
-            <span className='mic-info'>Stopped</span>}
+
 
           <button className='btn1' onClick={handleClick}>
             {isRecord ?
@@ -82,8 +80,8 @@ function App() {
               <i className="mic fas fa-microphone-slash fa-2x"></i>}
           </button>
 
-          { 
-            ((isWrite || !!transcript) && !isRecord ) &&
+          {
+            ((isWrite || !!transcript) && !isRecord) &&
             <button className='btn2' onClick={handleDeleteClick}>
               <i className="fas fa-times fa-2x"></i>
             </button>
@@ -93,7 +91,7 @@ function App() {
             className='box'
             value={isWrite ? written : speech}
             type="text"
-            placeholder='Please Enter The Text...'
+            placeholder={isRecord ? 'Listening' : 'Please Enter The Text...'}
             onChange={handleWritten}
             readOnly={isRecord && true}
           />

@@ -50,21 +50,6 @@ body{
   .box--left{
     position: relative;
     
-    .mic-info{
-      position:absolute;
-      bottom: 10px;
-      right: 210px;
-      left: 0px;
-      width: 50px;
-      margin: auto;
-    
-      @include tablet{
-        right: 400px;
-       
-      } 
-      
-    }
-
     .btn1{
       position:absolute;
       bottom: 30px;
@@ -85,9 +70,7 @@ body{
       @include tablet{
         right: 400px;
         
-      } 
-
-
+      }
     }
     
     .btn2{
@@ -101,6 +84,7 @@ body{
       background: transparent;
       border-style: none;
       margin: auto;
+      z-index: 1;
       &:hover{
         color: lightsalmon;
       }
