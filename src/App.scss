@@ -42,23 +42,21 @@ body{
       height: 300px;
       width: 400px;
     } 
-
-  
-  
   }
 
   .box--left{
     position: relative;
-    
+
     .btn1{
       position:absolute;
-      bottom: 30px;
+      bottom: 20px;
       right: 210px;
       left: 0px;
       width: 50px;
       background: transparent;
       border-style: none;
       margin: auto;
+
       .fa-microphone{
         color: lightsalmon;
       }
@@ -78,13 +76,14 @@ body{
       position:absolute;
       top: 15px;
       right: 0px;
-      left: 210px;
-      width: 20px;
+      left: 230px;
+      width: 40px;
       border-radius: 10px;
       background: transparent;
       border-style: none;
       margin: auto;
-      z-index: 1;
+
+  
       &:hover{
         color: lightsalmon;
       }

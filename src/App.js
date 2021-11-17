@@ -91,7 +91,7 @@ function App() {
             className='box'
             value={isWrite ? written : speech}
             type="text"
-            placeholder={isRecord ? 'Listening' : 'Please Enter The Text...'}
+            placeholder={isRecord ? 'Speak Now' : 'Please Enter The Text...'}
             onChange={handleWritten}
             readOnly={isRecord && true}
           />
