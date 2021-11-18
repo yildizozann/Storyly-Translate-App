@@ -3,13 +3,16 @@
 
 body{
   margin: auto;
-  text-align: center;
- 
+  text-align: center;  
+  font-family: Helvetica, sans-serif;
+
 }
 
 .header {
-  margin: 20px auto;
-  
+  margin: 10px auto;
+  @include desktop{
+    margin-top: 5%;
+  }
 }
 
 
@@ -18,20 +21,38 @@ body{
   display: grid;
   grid-template-columns: repeat( auto-fit, minmax(280px, 1fr) );
   gap: 20px;
+  
 
+  @include mobile-2{
+    grid-template-columns: repeat( auto-fit, minmax(440px, 1fr) );
+
+  }
+  
   @include tablet{
     grid-template-columns: repeat( auto-fit, minmax(480px, 1fr) );
+
+  }
+
+  @include laptop{
+    margin-top: 10%;
+  }
+
+  @include desktop{
+    margin-top: 10%;
+    grid-template-columns: repeat( auto-fit, minmax(780px, 1fr) );
   }
   
   .box{
     margin:  0 auto;
     height: 180px;
-    width: 200px;
+    width: 190px;
     resize: none;
     border-radius: 8px;
     font-size: 30px;
     padding: 20px 40px;
     max-width: 250px;
+    box-shadow: -4px 10px 35px -1px rgba(0, 0, 0, 0.75);
+    font-size: 20px;
     
     @include mobile{
       height: 200px;
@@ -41,7 +62,16 @@ body{
       max-width: 400px;
       height: 300px;
       width: 400px;
+      font-size: 30px;
     } 
+    @include desktop{
+      max-width: 700px;
+      height: 400px;
+      width: 700px;
+      font-size: 35px;
+      padding: 30px 40px;
+
+    }
   }
 
   .box--left{
@@ -69,6 +99,9 @@ body{
         right: 400px;
         
       }
+      @include desktop{
+        right: 680px;
+      }
     }
     
     .btn2{
@@ -91,6 +124,9 @@ body{
       @include tablet{
         left: 420px;
       } 
+      @include desktop{
+        left: 680px;
+      }
       
     }
 
