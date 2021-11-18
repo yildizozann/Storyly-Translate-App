@@ -3,16 +3,14 @@
 
 body{
   margin: auto;
-  text-align: center;  
+  text-align: center; 
   font-family: Helvetica, sans-serif;
 
 }
 
 .header {
-  margin: 10px auto;
-  @include desktop{
-    margin-top: 5%;
-  }
+  margin: 30px auto;
+  
 }
 
 
