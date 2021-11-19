@@ -7,10 +7,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Content
 
-English Speech Recognation (Speech to Text) using WebAPI
-Mic Permission using WebAPI
-English text and speech Translate to Turkish using Google API
-Responsive Design using Sass
+-English Speech Recognation (Speech to Text) using WebAPI
+-Mic Permission using WebAPI
+-English text and speech Translate to Turkish using Google API
+-Responsive Design using Sass
 
 
 
